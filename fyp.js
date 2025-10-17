@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById("form");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); // This will default form submission
 
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = `?firstName=${encodeURI(firstName)}&lastName=${encodeURI(lastName)}&email=${encodeURI(email)}`;
     window.location.href = "fyp.html" + query;
 // This action is taking your details in and once submit is clicked it opens the 
-// new html page where all info will be as it will be the 'mainpage'
+// new html page
     });
 });
 window.addEventListener("load", function () {
