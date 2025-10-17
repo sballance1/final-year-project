@@ -19,6 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const query = `?firstName=${encodeURI(firstName)}&lastName=${encodeURI(lastName)}&email=${encodeURI(email)}`;
+    window.location.href = "course.html" + query;
+// This action is taking your details in and once submit is clicked it opens the 
+// new html page
+    });
+});
+
+ document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // This will prevent a default form submission
+
+    const course = document.getElementById("course").value.trim();
+
+
+    const query = `?course=${encodeURI(course)}`;
     window.location.href = "fyp.html" + query;
 // This action is taking your details in and once submit is clicked it opens the 
 // new html page
