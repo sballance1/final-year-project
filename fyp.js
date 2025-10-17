@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById("form");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // This will default form submission
+    e.preventDefault(); // This will prevent a default form submission
 
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
