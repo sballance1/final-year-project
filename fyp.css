@@ -1,0 +1,28 @@
+body{
+
+    background-color: #F2D1DC;
+}
+
+.container{
+
+  margin: auto;
+  width: 50%;
+  border: 10px solid #9798e0;
+  padding: 60px;
+  text-align: center;
+  font-size: 25px;
+}
+#enterButton{
+     margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
+  font-size: 20px;
+  
+
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
