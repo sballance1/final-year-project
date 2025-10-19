@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterButton = document.getElementById('enterButton');
     if (enterButton) {
         enterButton.addEventListener('click', () => {
-            window.location.href = "signin.html";
+            window.location.href = "course.html";
         }); // the action to attach a new html page to the current page and makes the button functionable
     }
 });
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("email").value.trim();
+    const number = document.getElementById("number").value.trim();
 
 
-    const query = `?firstName=${encodeURI(firstName)}&lastName=${encodeURI(lastName)}&email=${encodeURI(email)}`;
-    window.location.href = "course.html" + query;
+
+    const query = `?firstName=${encodeURI(firstName)}&lastName=${encodeURI(lastName)}&email=${encodeURI(email)}&number=${encodeURI(number)}`;
+    window.location.href = "fyp.html" + query;
 // This action is taking your details in and once submit is clicked it opens the 
 // new html page
     });
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const query = `?course=${encodeURI(course)}`;
-    window.location.href = "fyp.html" + query;
+    window.location.href = "signin.html" + query;
 // This action is taking your details in and once submit is clicked it opens the 
 // new html page
     });
