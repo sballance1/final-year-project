@@ -13,7 +13,7 @@ body{
   font-size: 25px;
 }
 #enterButton{
-     margin: auto;
+  margin: auto;
   width: 50%;
   border: 3px solid black;
   padding: 10px;
@@ -21,8 +21,37 @@ body{
   cursor: pointer;
 
 }
+#submitButton{
+  margin: auto;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  border: 3px solid black;
+
+}
+#firstName{
+  width: 250px;
+  height: 25px;
+}
+#lastName{
+  width: 250px;
+  height: 25px;
+}
+#email{
+  width: 250px;  
+  height: 25px;
+}
+#number{
+  width: 250px;  
+  height: 25px;
+}
+#course{
+  width: 200px;
+  height: 25px;
+}
+
 .footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
