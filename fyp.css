@@ -1,13 +1,13 @@
 body{
 
-    background-color: #F2D1DC;
+    background-color: #51a3b6;
 }
 
 .container{
 
   margin: auto;
   width: 50%;
-  border: 10px solid #9798e0;
+  border: 10px solid #056767;
   padding: 60px;
   text-align: center;
   font-size: 25px;
@@ -18,7 +18,7 @@ body{
   border: 3px solid black;
   padding: 10px;
   font-size: 20px;
-  
+  cursor: pointer;
 
 }
 .footer{
