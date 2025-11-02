@@ -11,13 +11,13 @@
     <div id="container">
         <form id="form">         
              <label for="firstName" ><h3>FIRST NAME:</h3></label>
-            <input type="text" id="firstName" name="firstName">
+            <input type="text" id="firstName" name="firstName" required>
             <label for="lastName"><h3>LAST NAME:</h3></label>
-            <input type="text" id="lastName" name="lastName">
-            <label class="required" for="email"><h3>EMAIL:</h3></label>
-            <input type="email" id="email" name="email">
+            <input type="text" id="lastName" name="lastName" required>
+            <label class="required" for="email"><h3>EMAIL:<h5>(Please enter university email address)</h5></h3></label>
+            <input type="email" id="email" name="email" required>
              <label class="required" for="number"><h3>Student Number: <h5>(Must be 8 digits long)</h5></h3></label>
-            <input type="text" id="number" name="number">
+            <input type="text" id="number" name="number" required>
             <input id= "submitButton" type="submit" value="SUBMIT">
        
         </form>
