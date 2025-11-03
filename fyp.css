@@ -1,6 +1,7 @@
 body{
 
     background-color: #22778a;
+    width: auto;
 }
 
 .container{
@@ -55,3 +56,31 @@ body{
   bottom: 0;
   width: 100%;
 }
+
+.div{
+  position: relative;
+  overflow: hidden;
+  background-color: #FAF9F6;
+  height: 80px;
+  width: 100vw;
+ 
+}
+.images{
+  display: flex;
+  animation-name: Animation;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: max-content;
+}
+.images img{
+  height: 80px;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+@keyframes Animation {
+  from{transform: translateX(0);}
+  to{transform: translateX(-50%);}
+}
+
