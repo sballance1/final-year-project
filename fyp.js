@@ -5,6 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = "course.html";
         }); // the action to attach a new html page to the current page and makes the button functionable
     }
+     const courseDropdown = document.getElementById("dropdown");
+  if (courseDropdown) {
+    fetch("http://localhost:3000/api/courses")
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(course => {
+          const option = document.createElement("option");
+          option.value = course.course_code;
+          option.textContent = `${course.course_code} - ${course.course_name}`;
+          courseDropdown.appendChild(option);
+        });
+      })
+      .catch(err => console.error("Error loading courses:", err));
+  }
 });
 
     document.addEventListener("DOMContentLoaded", function () {
