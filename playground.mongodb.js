@@ -12,4 +12,4 @@
 // Select the database to use.
 use("FYP");
 
-db.Course.findOne({ course_code: "MH601" }) // test to make sure it connected 
+db.Course.findOne({ course_code: "MH603" }) // test to make sure it connected 
