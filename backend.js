@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-const uri = "mongodb+srv://sarah-fyp-db:12345@fyp.lj49qk2.mongodb.net/FYP";
+const uri = "mongodb+srv://sarah-fyp-db:123@fyp.lj49qk2.mongodb.net/FYP";
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
