@@ -68,3 +68,46 @@ window.addEventListener("load", function () {
         // and says hello, adds a nice personal touch 
     }
 });
+
+document.addEventListener("DOMContentLoaded", async () => {
+    // Erasmus universities
+    const erasmusDiv = document.getElementById("erasmus-list");
+    if (erasmusDiv) {
+        try {
+            const res = await fetch("http://localhost:3000/api/universities/erasmus");
+            const data = await res.json();
+
+            erasmusDiv.innerHTML = data.map(u => `
+                <div class="uni">
+                    <h3>${u.name}</h3>
+                    <p><strong>Country:</strong> ${u.country}</p>
+                    <p><strong>Language:</strong> ${u.language}</p>
+                    <img src="${u.image}" class="uni-img">
+                </div>
+            `).join("");
+        } catch (err) {
+            console.error("Error loading Erasmus universities:", err);
+        }
+    }
+
+    // Study Abroad universities
+    const saDiv = document.getElementById("studyabroad-list");
+    if (saDiv) {
+        try {
+            const res = await fetch("http://localhost:3000/api/universities/studyabroad");
+            const data = await res.json();
+
+            saDiv.innerHTML = data.map(u => `
+                <div class="uni">
+                    <h3>${u.name}</h3>
+                    <p><strong>Country:</strong> ${u.country}</p>
+                    <p><strong>Language:</strong> ${u.language}</p>
+                    <img src="${u.image}" class="uni-img">
+                </div>
+            `).join("");
+        } catch (err) {
+            console.error("Error loading Study Abroad universities:", err);
+        }
+    }
+});
+

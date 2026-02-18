@@ -51,11 +51,26 @@ body{
   height: 25px;
 }
 
+div.uni{
+  background-color: #0b5353;
+  border: 3px;
+  padding: 2px;
+}
+
+
 .footer{
   position: fixed;
   bottom: 0;
   width: 100%;
 }
+
+.footer-fyp{
+  padding: 15px;
+  position: static;
+  bottom: 0;
+  width: 100%;
+}
+
 
 .div{
   position: relative;
@@ -83,4 +98,12 @@ body{
   from{transform: translateX(0);}
   to{transform: translateX(-50%);}
 }
+
+.uni-img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
 
