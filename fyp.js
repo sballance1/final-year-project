@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <p><strong>Country:</strong> ${u.country}</p>
                     <p><strong>Language:</strong> ${u.language}</p>
                     <p>${u.overview}</p>
-                    <a href="${u.website}" target="_blank">Visit Website</a>
+                    <a href="${u.website}" target="_blank">Partner University Website</a>
                     <img src="${u.image}" class="uni-img">
                 </div>
             `).join("");
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <p><strong>Country:</strong> ${u.country}</p>
                     <p><strong>Language:</strong> ${u.language}</p>
                     <p>${u.overview}</p>
-                    <a href="${u.website}" target="_blank">Visit Website</a>
+                    <a href="${u.website}" target="_blank">Parter University Website</a>
                     <img src="${u.image}" class="uni-img">
                 </div>
             `).join("");
