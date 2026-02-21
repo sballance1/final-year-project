@@ -37,7 +37,7 @@ async function startServer() {
     const data = await db.collection('University')
       .aggregate([
         { $match: { type: "Erasmus" } },
-        { $sample: { size: 5 } }
+        { $sample: { size: 6 } }
       ])
       .toArray();
 
@@ -53,7 +53,7 @@ app.get('/api/universities/studyabroad', async (req, res) => {
     const data = await db.collection('University')
       .aggregate([
         { $match: { type: "Study_abroad" } },
-        { $sample: { size: 5 } }
+        { $sample: { size: 6 } }
       ])
       .toArray();
 
