@@ -120,18 +120,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (submitBtn && input && list) {
 
         function addTodo() {
-            const text = input.value.trim();
-            if (text === "") return;
+    const text = input.value.trim();
+    if (text === "") return;
 
-            const newElement = document.createElement('li');
-            newElement.className = 'listItem';
-            newElement.textContent = text;
+    // USER MESSAGE
+    const newElement = document.createElement('li');
+    newElement.className = 'listItem self';
+    newElement.textContent = text;
+    list.appendChild(newElement);
 
-            newElement.addEventListener('click', () => newElement.remove());
+    list.scrollTop = list.scrollHeight;
+    input.value = "";
 
-            list.appendChild(newElement);
-            input.value = "";
-        }
+    // AUTOMATIC REPLY (after 600ms)
+    setTimeout(() => {
+        const reply = document.createElement('li');
+        reply.className = 'listItem reply';
+        reply.textContent = "Thanks for your message! A student will get back to you soon.";
+        list.appendChild(reply);
+        list.scrollTop = list.scrollHeight;
+    }, 600);
+}
+
+
+        
 
         submitBtn.addEventListener('click', addTodo);
 
