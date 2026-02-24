@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (enterButton) {
         enterButton.addEventListener('click', () => {
             window.location.href = "course.html";
-        }); // the action to attach a new html page to the current page and makes the button functionable
+        });
     }
 
-    const courseDropdown = document.getElementById("courseDropdown"); // FIXED: was "dropdown", now matches HTML
+    const courseDropdown = document.getElementById("courseDropdown");
     if (courseDropdown) {
         fetch("http://localhost:3000/api/courses")
             .then(res => res.json())
@@ -22,26 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("form");
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // This will prevent a default form submission
-
-        const course = document.getElementById("courseDropdown").value.trim(); // FIXED: was "course", now matches dropdown ID
-
-        const query = `?course=${encodeURI(course)}`;
-        window.location.href = "signin.html" + query;
-        // This action is taking your details in and once submit is clicked it opens the 
-        // new html page
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const backButton = document.getElementById("backButton");
+    if (backButton) {
+        backButton.addEventListener("click", () => {
+            window.location.href = "fyp.html";
+        });
+    }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form");
+    if (!form) return;
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // This will prevent a default form submission
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (document.getElementById("courseDropdown")) {
+            const course = document.getElementById("courseDropdown").value.trim();
+            window.location.href = "signin.html?course=" + encodeURI(course);
+            return;
+        }
 
         const firstName = document.getElementById("firstName").value.trim();
         const lastName = document.getElementById("lastName").value.trim();
@@ -50,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const query = `?firstName=${encodeURI(firstName)}&lastName=${encodeURI(lastName)}&email=${encodeURI(email)}&number=${encodeURI(number)}`;
         window.location.href = "fyp.html" + query;
-        // This action is taking your details in and once submit is clicked it opens the 
-        // new html page
     });
 });
 
@@ -64,13 +63,10 @@ window.addEventListener("load", function () {
 
     if (greetingElement) {
         greetingElement.innerHTML = `<h2>${greeting}</h2>`;
-        // This is taking the first name element from above and is printing it on the new webpage
-        // and says hello, adds a nice personal touch 
     }
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Erasmus universities
     const erasmusDiv = document.getElementById("erasmus-list");
     if (erasmusDiv) {
         try {
@@ -85,6 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <p>${u.overview}</p>
                     <a href="${u.website}" target="_blank">Partner University Website</a>
                     <img src="${u.image}" class="uni-img">
+                    <a href="chat.html" class="chat-link">Chat with current student</a>
                 </div>
             `).join("");
         } catch (err) {
@@ -92,7 +89,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // Study Abroad universities
     const saDiv = document.getElementById("studyabroad-list");
     if (saDiv) {
         try {
@@ -107,6 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <p>${u.overview}</p>
                     <a href="${u.website}" target="_blank">Parter University Website</a>
                     <img src="${u.image}" class="uni-img">
+                    <a href="chat.html" class="chat-link">Chat with current student</a>
                 </div>
             `).join("");
         } catch (err) {
@@ -115,3 +112,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const submitBtn = document.getElementById('submit');
+    const input = document.getElementById('todo');
+    const list = document.getElementById('list');
+
+    if (submitBtn && input && list) {
+
+        function addTodo() {
+            const text = input.value.trim();
+            if (text === "") return;
+
+            const newElement = document.createElement('li');
+            newElement.className = 'listItem';
+            newElement.textContent = text;
+
+            newElement.addEventListener('click', () => newElement.remove());
+
+            list.appendChild(newElement);
+            input.value = "";
+        }
+
+        submitBtn.addEventListener('click', addTodo);
+
+        input.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                addTodo();
+            }
+        });
+    }
+});
