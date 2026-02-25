@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (submitBtn && input && list) {
 
-        function addTodo() {
+       function addTodo() {
     const text = input.value.trim();
     if (text === "") return;
 
