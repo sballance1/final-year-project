@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const firstName = document.getElementById("firstName").value.trim();
+        localStorage.setItem("username", firstName);
         const lastName = document.getElementById("lastName").value.trim();
         const email = document.getElementById("email").value.trim();
         const number = document.getElementById("number").value.trim();
@@ -56,7 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const firstName = urlParams.get("firstName");
+    let firstName = urlParams.get("firstName");
+
+    if (!firstName) {
+        firstName = localStorage.getItem("username");
+    }
 
     const greeting = firstName ? `Hello, ${firstName}!` : "Hello!";
     const greetingElement = document.getElementById("greeting");
@@ -65,6 +70,7 @@ window.addEventListener("load", function () {
         greetingElement.innerHTML = `<h2>${greeting}</h2>`;
     }
 });
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     const erasmusDiv = document.getElementById("erasmus-list");

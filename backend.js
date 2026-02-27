@@ -35,10 +35,7 @@ async function startServer() {
     app.get('/api/universities/erasmus', async (req, res) => {
   try {
     const data = await db.collection('University')
-      .aggregate([
-        { $match: { type: "Erasmus" } },
-        { $sample: { size: 6 } }
-      ])
+      .find({ type: "Erasmus" }, { projection: { _id: 0 } })
       .toArray();
 
     res.json(data);
@@ -51,10 +48,7 @@ async function startServer() {
 app.get('/api/universities/studyabroad', async (req, res) => {
   try {
     const data = await db.collection('University')
-      .aggregate([
-        { $match: { type: "Study_abroad" } },
-        { $sample: { size: 6 } }
-      ])
+      .find({ type: "Study_abroad" }, { projection: { _id: 0 } })
       .toArray();
 
     res.json(data);
@@ -63,6 +57,7 @@ app.get('/api/universities/studyabroad', async (req, res) => {
     res.status(500).send("Error fetching Study Abroad universities");
   }
 });
+
 
 
     app.listen(3000, () => {
