@@ -5,8 +5,9 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+// Links to mongodb database
 const uri = "mongodb+srv://sarah-fyp-db:123@fyp.lj49qk2.mongodb.net/FYP";
-const client = new MongoClient(uri, {
+const client = new MongoClient(uri, { // create client to connect to db
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -22,6 +23,7 @@ async function startServer() {
     db = client.db("FYP");
     console.log("Connected to MongoDB!");
 
+    // route 1 : get all courses. when frontend at /api/courses it shows db list on course.html page
     app.get('/api/courses', async (req, res) => {
       try {
         const courses = await db.collection('Course').find({}, { projection: { _id: 0 } }).toArray();
@@ -32,6 +34,7 @@ async function startServer() {
       }
     });
 
+    // route 2 : get erasmus universities 
     app.get('/api/universities/erasmus', async (req, res) => {
   try {
     const data = await db.collection('University')
@@ -45,7 +48,8 @@ async function startServer() {
   }
 });
 
-app.get('/api/universities/studyabroad', async (req, res) => {
+// route 3: get study abroad universities 
+    app.get('/api/universities/studyabroad', async (req, res) => {
   try {
     const data = await db.collection('University')
       .find({ type: "Study_abroad" }, { projection: { _id: 0 } })
@@ -61,7 +65,7 @@ app.get('/api/universities/studyabroad', async (req, res) => {
 
 
     app.listen(3000, () => {
-      console.log('Server running on http://localhost:3000');
+      console.log('Server running on http://localhost:3000'); // backend available at http://localhost:3000
     });
   } catch (err) {
     console.error("Failed to connect to MongoDB:", err);

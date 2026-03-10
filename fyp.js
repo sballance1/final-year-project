@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => { 
-    const enterButton = document.getElementById('enterButton');
+    const enterButton = document.getElementById('enterButton'); // enter button that goes to course.html page 
     if (enterButton) {
         enterButton.addEventListener('click', () => {
             window.location.href = "course.html";
         });
     }
 
-    const courseDropdown = document.getElementById("courseDropdown");
+    const courseDropdown = document.getElementById("courseDropdown"); // loads course options into dropdown
     if (courseDropdown) {
-        fetch("http://localhost:3000/api/courses")
+        fetch("http://localhost:3000/api/courses") // gets course data from backend
             .then(res => res.json())
             .then(data => {
                 data.forEach(course => {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const backButton = document.getElementById("backButton");
+    const backButton = document.getElementById("backButton"); // backbutton to go back to fyp.html when in the chat.html
     if (backButton) {
         backButton.addEventListener("click", () => {
             window.location.href = "fyp.html";
@@ -35,17 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form");
     if (!form) return;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", (e) => { // allows to open the next html file once course is selected and submitted
         e.preventDefault();
 
-        if (document.getElementById("courseDropdown")) {
+        if (document.getElementById("courseDropdown")) {  
             const course = document.getElementById("courseDropdown").value.trim();
             window.location.href = "signin.html?course=" + encodeURI(course);
             return;
         }
-
+        // collects user details 
         const firstName = document.getElementById("firstName").value.trim();
-        localStorage.setItem("username", firstName);
+        localStorage.setItem("username", firstName); // saves first name to later display on fyp.html
         const lastName = document.getElementById("lastName").value.trim();
         const email = document.getElementById("email").value.trim();
         const number = document.getElementById("number").value.trim();
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function () { // displays the first name saved from local storage in previous code 
     const urlParams = new URLSearchParams(window.location.search);
     let firstName = urlParams.get("firstName");
 
@@ -72,14 +72,14 @@ window.addEventListener("load", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async () => { 
     const erasmusDiv = document.getElementById("erasmus-list");
     if (erasmusDiv) {
         try {
             const res = await fetch("http://localhost:3000/api/universities/erasmus");
             const data = await res.json();
-
-            erasmusDiv.innerHTML = data.map(u => `
+            // displays university info from db
+            erasmusDiv.innerHTML = data.map(u => ` 
                 <div class="uni">
                     <h3>${u.name}</h3>
                     <p><strong>Country:</strong> ${u.country}</p>
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             const res = await fetch("http://localhost:3000/api/universities/studyabroad");
             const data = await res.json();
-
-            saDiv.innerHTML = data.map(u => `
+            // displays info from db 
+            saDiv.innerHTML = data.map(u => ` 
                 <div class="uni">
                     <h3>${u.name}</h3>
                     <p><strong>Country:</strong> ${u.country}</p>
@@ -118,18 +118,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { //chatbox feature
     const submitBtn = document.getElementById('submit');
     const input = document.getElementById('todo');
     const list = document.getElementById('list');
 
     if (submitBtn && input && list) {
 
-       function addTodo() {
+       function addTodo() { // function to add message to the chatbox
     const text = input.value.trim();
     if (text === "") return;
 
-    // USER MESSAGE
+    //add user's message
     const newElement = document.createElement('li');
     newElement.className = 'listItem self';
     newElement.textContent = text;
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     list.scrollTop = list.scrollHeight;
     input.value = "";
 
-    // AUTOMATIC REPLY (after 600ms)
+    // automatic reply after 600ms
     setTimeout(() => {
         const reply = document.createElement('li');
         reply.className = 'listItem reply';

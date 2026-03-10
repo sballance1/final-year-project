@@ -4,6 +4,7 @@ body{
     width: auto;
 }
 
+/* welcome.html page style */
 .container{
 
   margin: auto;
@@ -13,6 +14,9 @@ body{
   text-align: center;
   font-size: 25px;
 }
+/* welcome.html page style */
+
+/* welcome.html button style */
 #enterButton{
   margin: auto;
   width: 50%;
@@ -22,6 +26,9 @@ body{
   cursor: pointer;
 
 }
+/* welcome.html button style */
+
+/* course.html and signin.html button style */
 #submitButton{
   margin: auto;
   cursor: pointer;
@@ -30,40 +37,33 @@ body{
   border: 3px solid black;
 
 }
-#firstName{
-  width: 250px;
-  height: 25px;
-}
-#lastName{
-  width: 250px;
-  height: 25px;
-}
-#email{
-  width: 250px;  
-  height: 25px;
-}
-#number{
-  width: 250px;  
-  height: 25px;
-}
-#course{
-  width: 200px;
-  height: 25px;
-}
+/* course.html and signin.html button style */
 
+/* the style of signin.html page*/
+#firstName,
+#lastName,
+#email,
+#number{
+  width: 250px;
+  height: 25px;
+}
+/* the style of signin.html page*/
+
+/* for individual universities info and images */
 .uni {
   width: 350px;
   background: #FAF9F6;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 15px;
+  padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
+  font-size: 18px;
 }
 
 div.uni{
-  background-color: #0b5353;
+  background-color: #118e8e;
   border: 6px;
-  padding: 2px;
+  padding: 5px;
 }
 
 .uni-img {
@@ -82,8 +82,9 @@ div.uni{
 .uni a:hover {
   text-decoration: underline;
 }
+/* for individual universities info cards  */
 
-
+/* for the layout of erasmus and study abroad cards */
 #erasmus-list,
 #studyabroad-list {
   display: flex;
@@ -92,7 +93,9 @@ div.uni{
   justify-content: center;
   margin-top: 20px;
 }
+/* for the layout of erasmus and study abroad cards */
 
+/* chatbox link style on card */
 .chat-link {
     display: block;
     margin-top: 10px;
@@ -105,13 +108,14 @@ div.uni{
 .chat-link:hover {
     text-decoration: underline;
 }
-
+/* chatbox link style on card */
 
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
+/* footer layout looks good on welcome, course,signin page this way */
 
 .footer-fyp{
   padding: 15px;
@@ -119,8 +123,9 @@ div.uni{
   bottom: 0;
   width: 100%;
 }
+/* this way looks better on fyp.html and chat.html */
 
-
+/* continuous loop of images */
 .div{
   position: relative;
   overflow: hidden;
@@ -129,6 +134,7 @@ div.uni{
   width: 100vw;
  
 }
+
 .images{
   display: flex;
   animation-name: Animation;
@@ -137,6 +143,7 @@ div.uni{
   animation-timing-function: linear;
   width: max-content;
 }
+
 .images img{
   height: 80px;
   width: 150px;
@@ -147,14 +154,9 @@ div.uni{
   from{transform: translateX(0);}
   to{transform: translateX(-50%);}
 }
+/* continuous loop of images*/
 
-.uni-img {
-  width: 150px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-}
-
+/* chatbox page */
 #main{
   width:500px;
   margin: 20px auto;
@@ -203,17 +205,18 @@ div.uni{
     margin-left: 0;
 }
 
-
-
 input{
     width: 270px;
     height: 25px;
   
 }
+
 #submit{
 cursor: pointer;
 }
+/* chatbox page*/
 
+/* international office box info style  */
 .info-box {
     position: absolute;
     top: 15px;
@@ -234,8 +237,10 @@ cursor: pointer;
     color: #0b5353;
     font-weight: bold;
 }
+/* international office box info style */
 
 
+/* style of backbutton to return to fyp.html */
 .back-btn {
     background: black;
     color: white;
@@ -249,5 +254,5 @@ cursor: pointer;
 .back-btn:hover {
     opacity: 0.8;
 }
-
+/* style of backbutton to return to fyp.html */
 
