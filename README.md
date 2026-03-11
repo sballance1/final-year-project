@@ -55,14 +55,14 @@ I have downloaded node in my editor.
 MongoDB for vs code was an extension that was downloaded.
 
 To compile/run the system.
-1. connect MongoDB by opening the playground.mongodb.js file that is in the folder.
-2. Click connect that is at the top of the code. It should then have 'fyp.lj49qk2.mongodb.net'.
-3. If you click this you should then see Connected to fyp.lj49qk2.mongodb.net.
-4. After you have connected your MongoDB you will then open your backend.js file and open a terminal, normally powershell automatically opens, that's okay.
-5. Type into the terminal the command 'node backend.js'.
-6.You should then see the message 'Connected to MongoDB! Server running on http://localhost:3000'.
-7. Once both files are connected you should then open welcome.html
-8. Click run on the top toolbar and click start debugging.
-9.The study abroad platform will them run and you can start using the platform.
-10.To stop running the system simply click the x on the top right hand side of the browser.
+-1. connect MongoDB by opening the playground.mongodb.js file that is in the folder.
+-2. Click connect that is at the top of the code. It should then have 'fyp.lj49qk2.mongodb.net'.
+-3. If you click this you should then see Connected to fyp.lj49qk2.mongodb.net.
+-4. After you have connected your MongoDB you will then open your backend.js file and open a terminal, normally powershell automatically opens, that's okay.
+-5. Type into the terminal the command 'node backend.js'.
+-6.You should then see the message 'Connected to MongoDB! Server running on http://localhost:3000'.
+-7. Once both files are connected you should then open welcome.html
+-8. Click run on the top toolbar and click start debugging.
+-9.The study abroad platform will them run and you can start using the platform.
+-10.To stop running the system simply click the x on the top right hand side of the browser.
 
